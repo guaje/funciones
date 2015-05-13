@@ -1,0 +1,1046 @@
+<!doctype html>
+<html lang="es">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Funciones</title>
+
+		<meta name="description" content="Functions">
+		<meta name="author" content="Javier Guaje">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/dark-blue.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+                
+<section data-markdown>
+	# Funciones
+	#####Javier Guaje
+</section>
+<section data-markdown>
+	# Conceptos básicos
+</section>
+<section>
+	<section data-markdown>
+		## Funciones Matemáticas
+	</section>
+
+	<section data-markdown>
+		<script type="text/template">
+			## Funciones Matemáticas: Definición
+
+			Una función es una __relación__ que asocia a cada elemento de un conjunto llamado el __dominio__, uno y solo un elemento de otro conjunto llamado el __rango__.
+
+			<!-- .element: class="fragment" -->
+			Esta relación puede ser establecida mediante...
+		</script>
+	</section>
+
+	<section>
+		<h2>Funciones Matemáticas: Definición</h2>
+
+		<p>Relación establecida mediante una tabla.</p>
+
+		<table>
+			<thead>
+				<tr>
+					<th style="text-align:center">x</th>
+					<th style="text-align:center">y</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td style="text-align:center">-2</td>
+					<td style="text-align:center">1.5</td>
+				</tr>
+				<tr>
+					<td style="text-align:center">-1.5</td>
+					<td style="text-align:center">2</td>
+				</tr>
+				<tr>
+					<td style="text-align:center">-0.9</td>
+					<td style="text-align:center">3</td>
+				</tr>
+				<tr>
+					<td style="text-align:center">0</td>
+					<td style="text-align:center">4</td>
+				</tr>
+				<tr>
+					<td style="text-align:center">0.6</td>
+					<td style="text-align:center">5</td>
+				</tr>
+				<tr>
+					<td style="text-align:center">1</td>
+					<td style="text-align:center">6</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+
+	<section>
+		<h2>Funciones Matemáticas: Definición</h2>
+
+		<p>Relación establecida mediante un cálculo.</p>
+
+		<ul>
+			<li>\(y = mx + b\)</li>
+			<li class="fragment">\(y = ax^2 + bx + c\)</li>
+			<li class="fragment">\(x^3y + 4x - y = 5 - 2xy\)</li>
+			<li class="fragment">\(y = a_0x^n + a_1x^{n-1} + a_2x^{n-2} + \dots a_{n-1}x + a_n\)</li>
+			<li class="fragment">\(y = e^x\)</li>
+			<li class="fragment">\(y = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{1}{2}\left(\frac{x - \mu}{\sigma}\right)^2}\)</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>Funciones Matemáticas: Definición</h2>
+
+		<ul>
+			<li>
+				En matemáticas, para las funciones definidas como \(f : A \rightarrow B\), el conjunto \(A\) se denomina <b>dominio</b> y el conjunto \(B\) se denomina <b>rango</b>.
+			</li>
+			<li class="fragment">
+				A partir de esta definición se construye el <b>encabezado</b> o <b>firma</b> de las funciones de programación.
+			</li>
+		</ul>
+	</section>
+</section>
+<section>
+	<section data-markdown>
+		## Funciones en Programación
+	</section>
+
+	<section>
+		<h2>Funciones en Programación: Definición</h2>
+
+		<p>
+			Una función, desde el punto de vista de la programación, se define como un proceso que recibe valores de entrada (llamados <b>argumentos</b>) y el <b>retorna</b> un valor resultado.
+		</p>
+
+		<p class="fragment">
+			De la definición matemática:
+			$$f : A \rightarrow B$$
+		</p>
+
+		<p class="fragment">
+			se tiene que \(f\) corresponde al nombre de la función, el conjunto \(A\) corresponde al tipo de los <b>argumentos</b> de dicha función y el conjunto \(B\) que es el rango corresponderá al <b>valor de retorno</b> de dicha función.
+		</p>
+	</section>
+
+	<section data-markdown>
+		## Funciones en Programación: C++
+
+```cpp
+#include &lt;iostream&gt;
+
+using namespace std;
+
+// Espacio para declarar funciones
+
+bool esPar(int x)
+{
+	return x % 2 == 0;
+}
+
+int main()
+{
+
+	return 0;
+}
+```
+	</section>
+
+	<section data-markdown>
+		## Funciones en Programación: Python
+
+```python
+# Espacio para declarar funciones
+
+def esPar(x):
+    return x % 2 == 0
+```
+	</section>
+
+	<section>
+		<h2>Funciones en Programación: Ejemplo</h2>
+
+		<p>
+			Se definirá una función que eleve un número al cubo. Para expresar una función que calculé esta operación, en primera instancia se construye la expresión \(f : \mathbb{R} \rightarrow \mathbb{R}\) que define que la función tiene como entrada (dominio) un número real y como salida (rango) un número real. La declaración de la función quedará de la siguiente forma:
+			$$f: \mathbb{R} \rightarrow \mathbb{R}$$
+			$$f: x 􏰀\rightarrow x^2$$
+		</p>
+	</section>
+
+	<section>
+		<h2>Funciones en Programación: Ejemplo</h2>
+
+		<p>
+			Paso a paso tenemos:
+		</p>
+
+		<ul>
+			<li class="fragment">
+				Primero se escribe el tipo de retorno* (rango). Como es real, el tipo de dato puede ser float o double.
+				
+				<table>
+					<thead>
+						<tr>
+							<th style="text-align:center">C++</th>
+							<th style="text-align:center">Python</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td style="text-align:left">
+								float
+								<br>
+								double
+							</td>
+							<td style="text-align:left"></td>
+						</tr>
+					</tbody>
+				</table>
+			</li>
+		</ul>
+
+		<p class="fragment">* No aplica en el caso de python.</p>
+	</section>
+
+	<section>
+		<h2>Funciones en Programación: Ejemplo</h2>
+
+		<ul>
+			<li>
+				Posteriormente se escribe el nombre de la función f. En el caso de python se debe usar la palabra reservada <b>def</b> antes del nombre de la función.
+
+				<table>
+					<thead>
+						<tr>
+							<th style="text-align:center">C++</th>
+							<th style="text-align:center">Python</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td style="text-align:left">
+								float f
+								<br>
+								double f
+							</td>
+							<td style="text-align:left">def f</td>
+						</tr>
+					</tbody>
+				</table>
+			</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>Funciones en Programación: Ejemplo</h2>
+
+		<ul>
+			<li>
+				Entre paréntesis se coloca el tipo y la variable(s) del dominio. En este caso solamente se tiene la variable x quedando float o double x, para C++. En el caso de python, se escriben las variables entre paréntesis y se coloca el caracter dos puntos ':'.
+
+				<table>
+					<thead>
+						<tr>
+							<th style="text-align:center">C++</th>
+							<th style="text-align:center">Python</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td style="text-align:left">
+								float f(float x)
+								<br>
+								double f(double x)
+							</td>
+							<td style="text-align:left">def f(x):</td>
+						</tr>
+					</tbody>
+				</table>
+			</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>Funciones en Programación: Ejemplo</h2>
+
+		<ul>
+			<li>
+				En las siguientes líneas se escribe la definición de la función entre las llaves* terminando con punto y coma ;* cada linea de la función. Dicha definición de función corresponde al algoritmo ó computo, para generar la salida calculada de la función se utiliza la palabra clave return, de la siguiente manera:
+			</li>
+		</ul>
+
+		<p class="fragment">* En lenguajes como C, C++ o Java</p>
+	</section>
+
+	<section>
+		<h2>Funciones en Programación: Ejemplo</h2>
+
+		<table>
+			<thead>
+				<tr>
+					<th style="text-align:center">C++</th>
+					<th style="text-align:center">Python</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td style="text-align:left">
+						float f(float x)
+						<br>
+						{
+						<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;return x * x * x;
+						<br>
+						}
+						<br>
+						<br>
+						double f(double x)
+						<br>
+						{
+						<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;return x * x * x;
+						<br>
+						}
+					</td>
+					<td style="text-align:left">
+						def f(x):
+						<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;return x * x * x
+						<br>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+
+	<section data-markdown>
+		## Funciones en Programación: Ejemplo
+
+		Definir una función que calcule la n-ésima potencia de 2.
+	</section>
+
+	<section data-markdown>
+		## Funciones en Programación: Ejemplo en C++
+
+```cpp
+#include &lt;iostream&gt;
+
+using namespace std;
+
+int potenciaDe2(int x)
+{
+	return 1 << x;
+}
+
+int main()
+{
+	int x = 0;
+	int y = 0;
+	cout << "Ingrese un número: \t";
+	cin >> x;
+	y = potenciaDe2(x);
+	cout << "La " << x << "-esima potencia de 2 es: " << y << endl;
+
+	return 0;
+}
+```
+	</section>
+
+	<section data-markdown>
+		## Funciones en Programación: Ejemplo en Python
+
+```python
+def potenciaDe2(x):
+	return 1 << x
+
+x = int(input("Ingrese un número: \t"))
+y = potenciaDe2(x)
+print("La " + str(x) + "-esima potencia de 2 es: " + str(y))
+```
+	</section>
+
+	<section data-markdown>
+		## Funciones en Programación: Ejemplo
+
+		Usando las funciones seno y coseno calcule la tangente.
+	</section>
+
+	<section data-markdown>
+		## Funciones en Programación: Ejemplo en C++
+
+```cpp
+#include &lt;iostream&gt;
+#include &lt;math.h&gt;
+
+using namespace std;
+
+double tangente(double x)
+{
+	double s = sin(x);
+	double c = cos(x);
+	return s / c;
+}
+
+int main()
+{
+	int x = 0;
+	int y = 0;
+	cout << "Ingrese un número: \t";
+	cin >> x;
+	y = tangente(x);
+	cout << "La tangente de " << x << " es: " << y << endl;
+
+	return 0;
+}
+```
+	</section>
+
+	<section data-markdown>
+		## Funciones en Programación: Ejemplo en Python
+
+```python
+import numpy as np
+
+def tangente(x):
+	s = np.sin(x)
+	c = np.cos(x)
+	return s / c
+
+x = float(input("Ingrese un número: \t"))
+y = tangente(x)
+print("La tangente de " + str(x) + " es: " + str(y))
+```
+	</section>
+
+	<section>
+		<h2>Funciones en Programación: Anotaciones</h2>
+
+		<ul>
+			<li>
+				<p>
+					Una forma de entender/ver las funciones es como sub-programas que se pueden <b>invocar</b> desde cualquier parte del programa cuantas veces sea necesario.
+				</p>
+
+				<p class="fragment">
+					E.g., desde otra función(es) como la función <i>main</i>* o incluso, desde la misma función.
+				</p>
+			</li>
+			<li class="fragment">
+				Generalmente se usan cuando existen dos o más porciones de algoritmo dentro de un programa que son iguales o muy similares.
+			</li>
+		</ul>
+
+		<p class="fragment">
+			* En python no es necesario declarar una función main.
+		</p>
+	</section>
+</section>
+<section>
+	<section data-markdown>
+		## Funciones con varios argumentos
+	</section>
+
+	<section>
+		<h2>Funciones con varios argumentos</h2>
+
+		<p>
+			Las funciones están definidas de la forma \(f: A \rightarrow B\), siendo \(A\) y \(B\) conjuntos. Esta definición nos permite utilizar productos cartesianos generalizados como dominio en la declaración de las funciones.
+		</p>
+
+		<p class="fragment">
+			I.e., \(A = C \times D\) por lo tanto \(f: C \times D \rightarrow B\).
+		</p>
+	</section>
+
+	<section>
+		<h2>Funciones con varios argumentos: Ejemplo</h2>
+
+		<p>
+			La función que calcula el área de un rectángulo es una función que tiene como parámetros de entrada el ancho y el largo del rectángulo que son valores de tipo real y retorna como salida el área del rectángulo. Lo que puede escribirse como:
+			$$areaRectangulo: \mathbb{R} \times \mathbb{R} \rightarrow \mathbb{R}.$$
+		</p>
+	</section>
+
+	<section>
+		<h2>Funciones con varios argumentos: Ejemplo</h2>
+
+		<p>
+			Para el calculo del área de un rectángulo es necesario conocer el largo y el ancho del rectángulo, a partir de los cuales el área del rectángulo está dada por la expresión \(A_r = l * a\), donde las variables están definidas así:
+		</p>
+
+		<ul class="fragment">
+			<li>\(l\) := Largo del rectángulo</li>
+			<li>\(a\) := Ancho del rectángulo</li>
+			<li>\(A_r\) := Área del rectángulo de largo \(l\) y ancho \(a\)</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>Funciones con varios argumentos: Ejemplo</h2>
+
+		<p>
+			Y la función matemática queda definida de la siguiente forma:
+			$$areaRectangulo: \mathbb{R} \times \mathbb{R} \rightarrow \mathbb{R}$$
+			$$areaRectangulo: (l, a) \rightarrow l * a$$
+		</p>
+	</section>
+
+	<section data-markdown>
+		## Funciones con varios argumentos: Ejemplo
+
+		En este caso lo único que cambia es la firma de la función, así:
+	</section>
+
+	<section data-markdown>
+		## Funciones con varios argumentos: Ejemplo en C++
+
+```cpp
+#include &lt;iostream&gt;
+
+using namespace std;
+
+float areaRectangulo(float l, float a)
+{
+	return l * a;
+}
+
+double areaRectangulo(double l, double a)
+{
+	return l * a;
+}
+
+int main()
+{
+	float l = 0;
+	float a = 0;
+	float Ar = 0;
+	cout << "Ingrese el largo del rectangulo: \t";
+	cin >> l;
+	cout << "Ingrese el ancho del rectangulo: \t";
+	cin >> a;
+	Ar = areaRectangulo(l, a);
+	cout << "El area del rectangulo de largo " << l;
+	cout << " y ancho " << a;
+	cout << " es: " << Ar << endl;
+
+	return 0;
+}
+```
+	</section>
+
+	<section data-markdown>
+		## Funciones con varios argumentos: Ejemplo en Python
+
+```python
+def areaRectangulo(l, a):
+	return l * a
+
+l = float(input("Ingrese el largo del rectangulo: \t"))
+a = float(input("Ingrese el ancho del rectangulo: \t"))
+Ar = areaRectangulo(l, a)
+print("El area del rectangulo de largo " + str(l), end="")
+print(" y ancho " + str(a), end="")
+print(" es: " + str(Ar))
+```
+	</section>
+
+	<section data-markdown>
+		## Funciones con varios argumentos: Ejemplo
+
+		Note que los conjuntos que hacen parte del producto cartesiano del dominio pueden ser de diferentes tipos:
+	</section>
+
+	<section data-markdown>
+		## Funciones con varios argumentos: Ejemplo en C++
+
+```cpp
+#include &lt;iostream&gt;
+
+using namespace std;
+
+char sumaCaracteres(char c, int n)
+{
+	return c + n;
+}
+
+int main()
+{
+	char c = 0;
+	int n = 0;
+	char newC = 0;
+	cout << "Ingrese un caracter: \t";
+	cin >> c;
+	cout << "Ingrese numero: \t";
+	cin >> n;
+	newC = sumaCaracteres(c, n);
+	cout << "La suma del caracter: " << c;
+	cout << " con el numero: " << n;
+	cout << " da como resultado: " << newC << endl;
+
+	return 0;
+}
+```
+	</section>
+
+	<section data-markdown>
+		## Funciones con varios argumentos: Ejemplo en Python
+
+```python
+def sumaCaracteres(c, n):
+	return ord(c) + n
+
+c = input("Ingrese un caracter: \t")
+n = int(input("Ingrese numero: \t"))
+newC = chr(sumaCaracteres(c, n))
+print("La suma del caracter: " + str(c), end="")
+print(" con el numero: " + str(n), end="")
+print(" da como resultado: " + newC)
+```
+	</section>
+</section>
+<section>
+	<section data-markdown>
+		## Procedimientos
+	</section>
+
+	<section data-markdown>
+		<script type="text/template">
+		## Procedimientos: Definición
+
+		En muchos casos existen porciones de código similares que no calculan un valor sino que por ejemplo:
+
+		- Presentan información al usuario
+		- <!-- .element: class="fragment" -->
+		Leen una colección de datos
+		- <!-- .element: class="fragment" -->
+		Calculan mas de un valor
+
+		<!-- .element: class="fragment" -->
+		Sin embargo, como una función debe retornar un único valor este tipo de porciones de código no se podrían codificar como funciones.
+
+		<!-- .element: class="fragment" -->
+		Para superar este inconveniente se creó el concepto de procedimiento.
+		</script>
+	</section>
+
+	<section data-markdown>
+		<script type="text/template">
+		## Procedimientos: Definición
+
+		Los procedimientos son muy utilizados en los efectos laterales que se pueden llevar a cabo:
+
+		- Escribir en pantalla
+		- <!-- .element: class="fragment" -->
+		Modificar variables
+		- <!-- .element: class="fragment" -->
+		Leer datos
+		- <!-- .element: class="fragment" -->
+		Entre otros
+
+		<!-- .element: class="fragment" -->
+		Un procedimiento se define de la siguiente manera:
+		</script>
+	</section>
+
+	<section data-markdown>
+		## Procedimientos: Ejemplo en C++
+
+```cpp
+#include &lt;iostream&gt;
+
+using namespace std;
+
+void imprimir(bool x, char y, double z)
+{
+	cout << "El valor de la variable x es: " << x << endl;
+	cout << "El valor de la variable y es: " << y << endl;
+	cout << "El valor de la variable z es: " << z << endl;
+	cout << endl;
+}
+
+int main()
+{
+	imprimir(false, '.', 2.8);
+	imprimir(2.8, ',', 5.6);
+
+	return 0;
+}
+```
+	</section>
+
+	<section data-markdown>
+		## Procedimientos: Ejemplo en Python
+
+```python
+def imprimir(x, y, z):
+	print("El valor de la variable x es: " + str(bool(x)))
+	print("El valor de la variable y es: " + y)
+	print("El valor de la variable z es: " + str(float(z)))
+	print()
+
+imprimir(False, '.', 2.8)
+imprimir(2.8, ',', 5.6)
+```
+	</section>
+
+	<section data-markdown>
+		## Procedimientos: Consideraciones
+
+		Un procedimiento se puede asimilar a una  función que no retorna un resultado, y que puede retornar más de un valor mediante el uso de __argumentos por referencia__.
+	</section>
+</section>
+<section>
+	<section data-markdown>
+		## Alcance o visibilidad
+	</section>
+
+	<section data-markdown>
+		<script type="text/template">
+		## Alcance o visibilidad
+
+		Este término es usado para describir como una variable puede ser accedida y como una función/procedimiento puede ser llamado.
+
+		<!-- .element: class="fragment" -->
+		Existen 2 tipos de alcance, los cuales son:
+
+		- <!-- .element: class="fragment" -->
+		Alcance global
+
+		- <!-- .element: class="fragment" -->
+		Alcance local
+		</script>
+	</section>
+</section>
+<section>
+	<section data-markdown>
+		## Variables Globales y Locales
+	</section>
+
+	<section data-markdown>
+		<script type="text/template">
+		## Variables Globales: Definición
+
+		Variables definidas generalmente al comienzo del programa (despues de los include/import(s) y antes de cualquier función), que se pueden usar a lo largo de todo el programa*.
+
+		<!-- .element: class="fragment" -->
+		I.e., dentro del algoritmo principal y en cada función definida en el programa.
+
+		<!-- .element: class="fragment" -->
+		* Sujeto a modificadores de accesso.
+		</script>
+	</section>
+
+	<section data-markdown>
+		## Variables Globales: Ejemplo en C++
+
+```cpp
+#include &lt;iostream&gt;
+
+using namespace std;
+
+int a = 2;
+
+int multiplicar(int b)
+{
+	return a * b;
+}
+
+int main()
+{
+	multiplicar(2);
+	a++;
+	cout << a << endl;
+
+	return 0;
+}
+```
+	</section>
+
+	<section data-markdown>
+		## Variables Globales: Ejemplo en Python
+
+```python
+a = 2
+
+def multiplicar(b):
+	return a * b
+
+multiplicar(2)
+a+=1
+print(a)
+```
+	</section>
+
+	<section data-markdown>
+		## Variables Locales: Definición
+
+		Variables que son definidas dentro de cada función y/o procedimiento, y que solo se pueden usar en la función y/o procedimientos en la que son declaradas.
+	</section>
+
+	<section data-markdown>
+		## Variables Locales: Ejemplo en C++
+
+```cpp
+#include &lt;iostream&gt;
+
+using namespace std;
+
+int sumar(int a)
+{
+	return ++a;
+}
+
+int restar(int a)
+{
+	return --a;
+}
+
+int main()
+{
+	int s = 0;
+	int r = 0;
+	s = sumar(3);
+	r = restar(80);
+	cout << s << endl;
+	cout << r << endl;
+
+	return 0;
+}
+```
+	</section>
+
+	<section data-markdown>
+		## Variables Locales: Ejemplo en Python
+
+```python
+def sumar(a):
+	return a + 1
+
+def restar(a):
+	return a - 1
+
+s = sumar(3)
+r = restar(80)
+print(s)
+print(r)
+```
+	</section>
+
+	<section data-markdown>
+		## Variables Globales y Locales: Ejemplo en C++
+
+```cpp
+#include &lt;iostream&gt;
+
+using namespace std;
+
+double x = 1.67;
+
+int cuadrado(int x)
+{
+	return x * x;
+}
+
+int main()
+{
+	int c1 = 0;
+	c1 = cuadrado(3);
+	double c2 = x * x;
+	cout << c1 << endl;
+	cout << c2 << endl;
+
+	return 0;
+}
+```
+	</section>
+
+	<section data-markdown>
+		## Variables Globales y Locales: Ejemplo en Python
+
+```python
+x = 1.67
+
+def cuadrado(x):
+	return x * x
+
+c1 = cuadrado(3)
+c2 = x * x
+print(c1)
+print(c2)
+```
+	</section>
+
+	<section data-markdown>
+		## Variables Globales y Locales: Recomendaciones
+
+		Una buena técnica de programación es evitar o usar la menor cantidad de variables globales, de tal forma que las funciones y/o procedimientos que se creen no dependan de elementos externos, en este caso las variables globales, para realizar su proceso. El no usar variables globales dentro de una función y/o procedimiento garantiza su fácil depuración y seguimiento.
+	</section>
+</section>
+<section>
+	<section data-markdown>
+		## Argumentos por Valor y Referencia
+	</section>
+
+	<section data-markdown>
+		## Argumentos por Valor
+
+		Los argumentos convencionales son por valor, es decir a la función o procedimiento se le envía un valor que almacena en la variable correspondiente al argumento, la cual es local, de manera que su modificación no tiene efecto en el resto del programa.
+	</section>
+
+	<section data-markdown>
+		## Argumentos por Referencia
+
+		Sí una función/procedimiento tiene un argumento por referencia, este no recibe un valor, sino una referencia a una variable, es decir la misma variable (posición en memoria y valor) que envía el algoritmo que hace el llamado al procedimiento con un alias (el nombre de la variable del argumento que se recibe por referencia), por lo tanto cualquier modificación del argumento tiene efectos en el algoritmo que realizó el llamado de la función/procedimiento.
+	</section>
+</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				// Display controls in the bottom right corner
+				controls: true,
+
+				// Display a presentation progress bar
+				progress: false,
+
+				// Display the page number of the current slide
+				slideNumber: true,
+
+				// Push each slide change to the browser history
+				history: true,
+
+				// Enable keyboard shortcuts for navigation
+				keyboard: true,
+
+				// Enable the slide overview mode
+				overview: true,
+
+				// Vertical centering of slides
+				center: true,
+
+				// Enables touch navigation on devices with touch input
+				touch: true,
+
+				// Loop the presentation
+				loop: false,
+
+				// Change the presentation direction to be RTL
+				rtl: false,
+
+				// Turns fragments on and off globally
+				fragments: true,
+
+				// Flags if the presentation is running in an embedded mode,
+				// i.e. contained within a limited portion of the screen
+				embedded: false,
+
+				// Flags if we should show a help overlay when the questionmark
+				// key is pressed
+				help: true,
+
+				// Number of milliseconds between automatically proceeding to the
+				// next slide, disabled when set to 0, this value can be overwritten
+				// by using a data-autoslide attribute on your slides
+				autoSlide: 0,
+
+				// Stop auto-sliding after user input
+				autoSlideStoppable: true,
+
+				// Enable slide navigation via mouse wheel
+				mouseWheel: false,
+
+				// Hides the address bar on mobile devices
+				hideAddressBar: true,
+
+				// Opens links in an iframe preview overlay
+				previewLinks: false,
+
+				// Transition style
+				transition: 'slide', // default/none/fade/slide/convex/concave/zoom
+
+				// Transition speed
+				transitionSpeed: 'default', // default/fast/slow
+
+				// Transition style for full page slide backgrounds
+				backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+
+				// Number of slides away from the current that are visible
+				viewDistance: 3,
+
+				// Parallax background image
+				parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+				// Parallax background size
+				parallaxBackgroundSize: '', // CSS syntax, e.g. "2100px 900px"
+
+				// Optional reveal.js plugins
+				dependencies: [
+				// Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+				{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+				// Interpret Markdown in <section> elements
+				{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+
+				// Syntax highlight for <code> elements
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+
+				// Zoom in and out with Alt+click
+				{ src: 'plugin/zoom-js/zoom.js', async: true },
+
+				// Speaker notes
+				{ src: 'plugin/notes/notes.js', async: true },
+
+				// Remote control your reveal.js presentation using a touch device
+				{ src: 'plugin/remotes/remotes.js', async: true },
+
+				// MathJax
+				{ src: 'plugin/math/math.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
